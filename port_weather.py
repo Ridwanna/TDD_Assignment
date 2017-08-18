@@ -5,20 +5,21 @@ class Ph_weather(object):
 	path = "D:\TDD_Challenge\TDD_Assignment"
 	fname ="port-harcourt-weather.txt"
 	"""docstring for ClassName"""
-	def filePath(self, fname):
+
+	def filePath(fname):
 
 		if os.path.isfile(fname):
 		    print fname
 		else:
 		    print "no such file"
 
-	def tempDiff(self, fname):
+	def tempDiff(fname):
 		with open(fname) as newfile:
 			next(newfile)
 			next(newfile)
 			dayKey = []
 			dailyTempDiff = []
-			for line in file:
+			for line in newfile:
 				#print line
 				splitted_line = line.split()
 				
@@ -37,9 +38,11 @@ class Ph_weather(object):
 						pass
 				except:
 					pass
+
 				dailyTempDiff.append(dailyHigh - dailyLow) #to subtract dailylow from dailyHigh and save it inside dailyTempSpread				
 		weatherDict = dict (zip(dayKey, dailyTempDiff))
-			
-		print weatherDict
+		return dayKey, dailyTempDiff, weatherDict,
 
-		tempDiff()
+	tempDiff(fname)
+
+	
