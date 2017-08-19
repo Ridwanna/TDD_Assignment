@@ -1,10 +1,10 @@
 import os
 # import os.path
 
-class Ph_weather(object):
+class Ph_weather(object):	
+	"""docstring for ClassName"""
 	path = "D:\TDD_Challenge\TDD_Assignment"
 	fname ="port-harcourt-weather.txt"
-	"""docstring for ClassName"""
 
 	def filePath(fname):
 
@@ -41,8 +41,8 @@ class Ph_weather(object):
 
 				dailyTempDiff.append(dailyHigh - dailyLow) #to subtract dailylow from dailyHigh and save it inside dailyTempSpread				
 		weatherDict = dict (zip(dayKey, dailyTempDiff))
-		return dayKey, dailyTempDiff, weatherDict,
+		lowestTempSpread = min(sorted(weatherDict.values()))
+		return dayKey, dailyTempDiff, weatherDict, lowestTempSpread
 
 	tempDiff(fname)
-
 	

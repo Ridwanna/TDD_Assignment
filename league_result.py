@@ -1,6 +1,15 @@
 class FootballLeaguePerformance(object):
+	"""docstring for ClassName"""
 
 	filename = "football-league-results.txt"
+
+	def filePath(fname):
+
+		if os.path.isfile(fname):
+		    print fname
+		else:
+		    print "no such file"
+
 
 	def leagueResult(filename):
 		with open (filename) as result:
